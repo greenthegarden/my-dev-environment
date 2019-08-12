@@ -1,0 +1,6 @@
+---
+
+- name: gantsign.visual-studio-code
+  cms: git
+  src: git+https://github.com/gantsign/ansible-role-visual-studio-code.git
+  version: origin/master

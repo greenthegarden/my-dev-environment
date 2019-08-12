@@ -1,0 +1,23 @@
+---
+
+- hosts: all
+
+  vars:
+    # override gantsign.visual-studio-code default vars
+    visual_studio_code_version: ''
+    visual_studio_code_build: stable
+    users:
+      - username: philip
+      visual_studio_code_extensions:
+        - 
+        - 
+      visual_studio_code_settings: {
+
+      }
+
+  # run base tasks for testing
+  tasks:
+  
+    - name: Install Visual Studio Code
+      import_role:
+        name: gantsign.visual-studio-code
