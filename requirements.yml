@@ -1,6 +1,26 @@
 ---
 
+- name: gantsign.antigen
+  cms: git
+  src: git+https://github.com/gantsign/ansible_role_antigen.git
+  version: origin/master
+
 - name: gantsign.visual-studio-code
   cms: git
   src: git+https://github.com/gantsign/ansible-role-visual-studio-code.git
+  version: origin/master
+
+- name: geerlingguy.docker
+  cms: git
+  src: git+https://github.com/geerlingguy/ansible-role-docker.git
+  version: origin/master
+
+- name: geerlingguy.pip
+  cms: git
+  src: git+https://github.com/geerlingguy/ansible-role-pip.git
+  version: origin/master
+
+- name: oefenweb.virtualbox
+  cms: git
+  src: git+https://github.com/Oefenweb/ansible-virtualbox.git
   version: origin/master
