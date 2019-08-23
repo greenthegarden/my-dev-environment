@@ -21,7 +21,6 @@
           "editor.tabSize": 2
         }
 
-  # run base tasks for testing
   tasks:
   
     - name: Install Visual Studio Code

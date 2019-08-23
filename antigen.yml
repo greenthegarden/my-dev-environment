@@ -2,23 +2,35 @@
 
 - hosts: all
 
-  roles:
+  vars:
 
-    - role: gantsign.antigen
-      users:
-        - username: "{{ ansible_user_id }}"
-          antigen_libraries:
-            - name: oh-my-zsh
-          antigen_theme:
-            name: robbyrussell
-          antigen_bundles:
-            # Bundles from the default repo (robbyrussell's oh-my-zsh).
-            - name: git
-            - name: heroku
-            - name: pip
-            - name: lein
-            - name: command-not-found
-            # Syntax highlighting bundle.
-            - name: zsh-syntax-highlighting # `name` is required (any valid file name will do so long as it's unique for the bundles)
-              url: zsh-users/zsh-syntax-highlighting
+    users:
+      - username: "{{ ansible_user_id }}"
+        antigen_libraries:
+          - name: oh-my-zsh
+        antigen_theme:
+          name: agnoster
+        antigen_bundles:
+          # Bundles from the default repo (robbyrussell's oh-my-zsh).
+          - name: git
+          - name: heroku
+          - name: pip
+          - name: lein
+          - name: command-not-found
+          # Syntax highlighting bundle.
+          - name: zsh-syntax-highlighting # `name` is required (any valid file name will do so long as it's unique for the bundles)
+            url: zsh-users/zsh-syntax-highlighting
+
+  tasks:
+  
+    - name: Install Powerline-fonts
+      become: yes
+      apt:
+        name: fonts-powerline
+        state: latest
+      when: ansible_pkg_mgr == 'apt'
+
+    - name: Install Antigen
+      import_role:
+        name: gantsign.antigen
               
