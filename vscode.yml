@@ -1,0 +1,29 @@
+---
+
+- hosts: all
+
+  vars:
+    # override gantsign.visual-studio-code default vars
+    visual_studio_code_version: ''
+    visual_studio_code_build: stable
+    users:
+      - username: "{{ ansible_user }}"
+        visual_studio_code_extensions:
+          - ms-python.python
+          - eamodio.gitlens
+          - ms-azuretools.vscode-docker
+          - redhat.vscode-yaml
+          - visualstudioexptteam.vscodeintellicode
+          - davidanson.vscode-markdownlint
+          - vscoss.vscode-ansible
+        visual_studio_code_settings: {
+          "editor.fontSize": 11,
+          "editor.tabSize": 2
+        }
+
+  # run base tasks for testing
+  tasks:
+  
+    - name: Install Visual Studio Code
+      import_role:
+        name: gantsign.visual-studio-code

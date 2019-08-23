@@ -1,0 +1,5 @@
+# ensure external roles are not added to repo
+gantsign.*
+geerlingguy.*
+greenthegarden.*
+oefenweb.*

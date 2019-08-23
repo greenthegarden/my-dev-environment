@@ -1,0 +1,18 @@
+---
+
+- hosts: all
+
+  vars:
+
+    git_config: [
+      { key: 'user.name', scope: 'global', value: 'Philip Cutler' },
+      { key: 'user.email', scope: 'global', value: 'greenthegarden@gmail.com' },
+    ]
+
+  tasks:
+
+    - name: Configure git
+      import_role:
+        name: greenthegarden.configure-host
+        tasks_from: configure-git.yml
+
