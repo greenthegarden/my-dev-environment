@@ -13,9 +13,16 @@
         antigen_bundles:
           # Bundles from the default repo (robbyrussell's oh-my-zsh).
           - name: git
-          - name: heroku
+          - name: git-extras
+          - name: github
+          - name: gitignore
+          - name: extract
+          - name: web-search 
+          - name: docker
+          - name: vagrant
           - name: pip
-          - name: lein
+          - name: python
+          - name: ssh-agent
           - name: command-not-found
           # Syntax highlighting bundle.
           - name: zsh-syntax-highlighting # `name` is required (any valid file name will do so long as it's unique for the bundles)
