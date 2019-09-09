@@ -38,7 +38,7 @@ The following packages are installed and configured:
 * [Zsh](https://www.zsh.org/) with the [oh-my-zsh](https://ohmyz.sh/) libraries is installed using the [gantsign.antigen](https://github.com/gantsign/ansible_role_antigen.git) role. Configuration for the installation, including which antigen bundles are installed, is managed in the file [antigen.yml](antigen.yml).
 * [Visual Studio Code](https://code.visualstudio.com/) is currently my prefered IDE and is installed using the [gantsign.visual-studio-code](https://github.com/gantsign/ansible-role-visual-studio-code.git) role. Configuration for the installation, including which extensions are installed, is managed in the file [vscode.yml](vscode.yml).
 * [VirtualBox](https://www.virtualbox.org/)
-* [Google Chrome](https://www.google.com/chrome/)
+* [Chromium](https://www.chromium.org/)
 * [Docker](https://www.docker.com)
 
 ## Installing
@@ -58,7 +58,7 @@ To run the installation of only a single package, enter the following in place o
 | Package            | Option     |
 | -------            | ---------- |
 | Docker             | docker     |
-| Google Chrome      | chrome     |
+| Chromium           | chromium   |
 | VirtualBox         | virtualbox |
 | Visual Studio Code | vscode     |
 | Zsh                | antigen    |

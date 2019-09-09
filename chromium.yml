@@ -1,0 +1,12 @@
+---
+
+- hosts: all
+
+  vars:
+
+  tasks:
+  
+    - name: Install Chromium
+      import_role:
+        name: chromium
+        tasks_from: install.yml
