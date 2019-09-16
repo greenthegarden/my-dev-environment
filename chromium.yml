@@ -4,9 +4,23 @@
 
   vars:
 
+    packages: [
+      { 'name': 'chromium', 'state': 'latest' },
+      { 'name': 'chromium-l10n', 'state': 'latest' },
+    ]
+
   tasks:
   
     - name: Install Chromium
       import_role:
-        name: chromium
-        tasks_from: install.yml
+        name: greenthegarden.configure-host
+        tasks_from: install-dependencies.yml
+
+    # file needs to be have the correxct permissions set
+    - name: Set correct permissions
+      become: yes
+      file:
+        path: /usr/bin/drawio
+        owner: root
+        group: root
+        mode: '4777'
