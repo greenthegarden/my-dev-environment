@@ -15,4 +15,3 @@
       import_role:
         name: greenthegarden.configure-host
         tasks_from: configure-git.yml
-
