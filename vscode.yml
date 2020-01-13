@@ -30,7 +30,6 @@
           - eamodio.gitlens # GitLens
           - kameshkotwani.google-search # Google Search
           - wholroyd.hcl # Hashicorp HCL
-          - keesschollaart.vscode-home-assistant # Home Assistant Config Helper
           - tberman.json-schema-validator # JSON schema validator
           - eriklynd.json-tools # JSON tools
           - tuxtina.json2yaml # json2yaml
@@ -38,9 +37,7 @@
           - shd101wyy.markdown-preview-enhanced # Markdown Preview Enhanced
           - davidanson.vscode-markdownlint # markdownlint
           - 42Crunch.vscode-openapi # OpenAPI (Swagger) Editor
-          - openhab.openhab # openHAB
           - johnpapa.vscode-peacock # Peacock
-          - platformio.platformio-ide # PlatformIO IDE
           - ms-python.python # Python
           - ms-vscode-remote.vscode-remote-extensionpack # Remote Development
           - humao.rest-client # REST Client

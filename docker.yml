@@ -20,30 +20,30 @@
       "{{ ansible_user_id }}"
     ]
 
-  post_tasks:
+  pre_tasks:
 
     - name: Update host packages
       import_role:
-        name: configure-host
+        name: greenthegarden.configure-host
         tasks_from: run-package-update
       tags:
         - base
         - update
 
-    - name: Install dependencies
-      import_role:
-        name: configure-host
-        tasks_from: install-dependencies
-      tags:
-        - base
-        - dependencies
+    # - name: Install dependencies
+    #   import_role:
+    #     name: greenthegarden.configure-host
+    #     tasks_from: install-dependencies
+    #   tags:
+    #     - base
+    #     - dependencies
 
-    - name: Configure Docker
-      import_role:
-        name: configure-docker
-      tags:
-        - docker
-        - configuration
+    # - name: Configure Docker
+    #   import_role:
+    #     name: configure-docker
+    #   tags:
+    #     - docker
+    #     - configuration
 
   tasks:
 

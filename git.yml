@@ -7,6 +7,7 @@
     git_config: [
       { key: 'user.name', scope: 'global', value: 'Philip Cutler' },
       { key: 'user.email', scope: 'global', value: 'greenthegarden@gmail.com' },
+      { key: 'credential.helper', scope: 'global', value: 'cache' },
     ]
 
   tasks:

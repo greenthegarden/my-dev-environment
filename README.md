@@ -22,7 +22,7 @@ sudo apt install git
 git clone https://github.com/greenthegarden/my-dev-environment.git
 ```
 
-Configure git using
+The following configuration items will be set using the git playbook.
 
 ```sh
 git config --global user.name "Philip Cutler"
