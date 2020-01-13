@@ -16,29 +16,46 @@
           - ms-vsts.team # Azure Repos
           - alefragnani.bookmarks # Bookmarks
           - coenraads.bracket-pair-colorizer-2 # Bracket pair colorizer 2
+          - wmaurer.change-case # Change Case
           - streetsidesoftware.code-spell-checker # Code Spell Checker
+          - IBM.codewind # Codewind
+          - IBM.codewind-openapi-tools # Codewind OpenAPI Tools
+          - NgekNgok.vscode-custom-snippets # Custom Snippets
           - ms-azuretools.vscode-docker # Docker
+          - henriiik.docker-linter # Docker Linter
+          - DmitryDorofeev.empty-indent # Empty Indent
           - donjayamanne.githistory # Git History
+          - piotrpalarz.vscode-gitignore-generator # Gitignore Generator
           - felipecaputo.git-project-manager # Git Project Manager
           - eamodio.gitlens # GitLens
+          - kameshkotwani.google-search # Google Search
           - wholroyd.hcl # Hashicorp HCL
           - keesschollaart.vscode-home-assistant # Home Assistant Config Helper
+          - tberman.json-schema-validator # JSON schema validator
+          - eriklynd.json-tools # JSON tools
+          - tuxtina.json2yaml # json2yaml
           - yzhang.markdown-all-in-one # Markdown All in One
           - shd101wyy.markdown-preview-enhanced # Markdown Preview Enhanced
           - davidanson.vscode-markdownlint # markdownlint
+          - 42Crunch.vscode-openapi # OpenAPI (Swagger) Editor
           - openhab.openhab # openHAB
+          - johnpapa.vscode-peacock # Peacock
           - platformio.platformio-ide # PlatformIO IDE
           - ms-python.python # Python
           - ms-vscode-remote.vscode-remote-extensionpack # Remote Development
           - humao.rest-client # REST Client
+          - lextudio.restructuredtext # reStructuredText
+          - sonarsource.sonarlint-vscode # SonarLint
           - mauve.terraform # Terraform
           - gruntfuggly.todo-tree # Todo tree
           - bbenoist.vagrant # Vagrant
           - visualstudioexptteam.vscodeintellicode # Visual Studio IntelliCode
           - vscode-icons-team.vscode-icons # VSCode-icons
           - redhat.vscode-yaml # YAML
+          # - ricardo-emerson.base-development-extensions-pack
+          
         visual_studio_code_settings: {
-          "editor.fontSize": 11,
+          "editor.fontSize": 12,
           "editor.tabSize": 2
         }
 
