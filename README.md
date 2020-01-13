@@ -22,12 +22,23 @@ sudo apt install git
 git clone https://github.com/greenthegarden/my-dev-environment.git
 ```
 
+Configure git using
+
+```sh
+git config --global user.name "Philip Cutler"
+git config --global user.email "greenthegarden@gmail.com"
+git config credential.helper cache
+```
+ 
 ### Ansible
 
 [Ansible](https://www.ansible.com/) is used to automate the installation and configuration of the host system. Install via [Pip](https://pypi.org/pip), using (or other method depending on host OS and package manager):
 
 ```bash
-sudo apt install python-pip
+sudo apt install python3-pip
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 2
+sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
 sudo pip install ansible --upgrade
 ```
 
