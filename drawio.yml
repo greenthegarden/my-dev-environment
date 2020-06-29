@@ -10,8 +10,18 @@
     drawio_package_rpm: https://github.com/jgraph/drawio-desktop/releases/download/v{{ drawio_package_version }}/draw.io-{{ drawio_package_arch }}-{{ drawio_package_version }}.rpm
     drawio_package_name: drawio
 
-  tasks:
-  
+  pre_tasks:
+
+    - name: Update apt-get repo and cache
+      become: yes
+      apt:
+        update_cache: yes
+        force_apt_get: yes
+        cache_valid_time: 3600
+      when: ansible_pkg_mgr == 'apt'
+
+   tasks:
+
     - name: "Check if {{ drawio_package_name }} is installed"
       package_facts:
         manager: auto
@@ -20,14 +30,14 @@
         var: ansible_facts.packages
 
     - name: "NGINX test result"
-      debug: 
+      debug:
         msg: "NGINX found"
       when: drawio_package_name in ansible_facts.packages
 
     - name: Install draw.io from deb package
       become: yes
       apt:
-        deb: "{{ drawio_package_deb }}" 
+        deb: "{{ drawio_package_deb }}"
       when: ansible_pkg_mgr == 'apt'
 
     - name: Install draw.io from rpm package

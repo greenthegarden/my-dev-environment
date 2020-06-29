@@ -16,5 +16,8 @@ pipx install flake8  # tool for style guide enforcement
 pipx install gdbgui  # browser-based gdb debugger
 pipx install poetry  # python dependency/environment/packaging management
 pipx install pylint  # source code analyzer
-pipx install pyxtermjs  # fully functional terminal in the browser 
+pipx install pyxtermjs  # fully functional terminal in the browser
 pipx install cookiecutter  # creates projects from project templates
+
+# install git hook scripts
+pre-commit install

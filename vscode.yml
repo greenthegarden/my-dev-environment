@@ -10,7 +10,7 @@
       - username: "{{ ansible_user_id }}"
         visual_studio_code_extensions:
           - vscoss.vscode-ansible # Ansible
-          - ms-vscode.atom-keybindings # Atom Keybindings
+          - ms-vscode.atom-keybindings # Atom Keymap
           - ms-vscode.azurecli # Azure CLI Tools
           - vsciot-vscode.azure-iot-tools # Azure IoT Tools
           - ms-vsts.team # Azure Repos
@@ -18,21 +18,26 @@
           - coenraads.bracket-pair-colorizer-2 # Bracket pair colorizer 2
           - wmaurer.change-case # Change Case
           - streetsidesoftware.code-spell-checker # Code Spell Checker
-          - IBM.codewind # Codewind
-          - IBM.codewind-openapi-tools # Codewind OpenAPI Tools
+          # - IBM.codewind # Codewind
+          # - IBM.codewind-openapi-tools # Codewind OpenAPI Tools
           - NgekNgok.vscode-custom-snippets # Custom Snippets
           - ms-azuretools.vscode-docker # Docker
           - henriiik.docker-linter # Docker Linter
           - DmitryDorofeev.empty-indent # Empty Indent
           - donjayamanne.githistory # Git History
-          - piotrpalarz.vscode-gitignore-generator # Gitignore Generator
           - felipecaputo.git-project-manager # Git Project Manager
+          - github.vscode-pull-request-github # GitHub Pull Requests and Issues
+          - codezombiech.gitignore # gitignore
+          - piotrpalarz.vscode-gitignore-generator # Gitignore Generator
           - eamodio.gitlens # GitLens
           - kameshkotwani.google-search # Google Search
           - wholroyd.hcl # Hashicorp HCL
+          - hashicorp.terraform # HashiCorp Terraform
+          - zainchen.json #json
           - tberman.json-schema-validator # JSON schema validator
           - eriklynd.json-tools # JSON tools
           - tuxtina.json2yaml # json2yaml
+          - ms-vsliveshare.vsliveshare-pack # Live Share Extension Pack
           - yzhang.markdown-all-in-one # Markdown All in One
           - shd101wyy.markdown-preview-enhanced # Markdown Preview Enhanced
           - davidanson.vscode-markdownlint # markdownlint
@@ -50,14 +55,17 @@
           - vscode-icons-team.vscode-icons # VSCode-icons
           - redhat.vscode-yaml # YAML
           # - ricardo-emerson.base-development-extensions-pack
-          
+
         visual_studio_code_settings: {
           "editor.fontSize": 12,
-          "editor.tabSize": 2
+          "editor.tabSize": 2,
+          "editor.insertSpaces": true,
+          "editor.detectIndentation": false,
+          "cSpell.language": "en-GB",
         }
 
   tasks:
-  
+
     - name: Install Visual Studio Code
       import_role:
         name: gantsign.visual-studio-code
