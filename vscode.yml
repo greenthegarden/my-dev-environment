@@ -17,6 +17,7 @@
           - alefragnani.bookmarks # Bookmarks
           - coenraads.bracket-pair-colorizer-2 # Bracket pair colorizer 2
           - wmaurer.change-case # Change Case
+          - formulahendry.code-runner # Code Runner
           - streetsidesoftware.code-spell-checker # Code Spell Checker
           # - IBM.codewind # Codewind
           # - IBM.codewind-openapi-tools # Codewind OpenAPI Tools
@@ -47,7 +48,10 @@
           - ms-vscode-remote.vscode-remote-extensionpack # Remote Development
           - humao.rest-client # REST Client
           - lextudio.restructuredtext # reStructuredText
+          - foxundermoon.shell-format # shell-format
           - sonarsource.sonarlint-vscode # SonarLint
+          - tyriar.sort-lines # Sort lines
+          - tabnine.tabnine-vscode # TabNine
           - mauve.terraform # Terraform
           - gruntfuggly.todo-tree # Todo tree
           - bbenoist.vagrant # Vagrant
