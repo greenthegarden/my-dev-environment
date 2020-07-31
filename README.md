@@ -22,12 +22,23 @@ sudo apt install git
 git clone https://github.com/greenthegarden/my-dev-environment.git
 ```
 
+The following configuration items will be set using the git playbook.
+
+```sh
+git config --global user.name "Philip Cutler"
+git config --global user.email "greenthegarden@gmail.com"
+git config credential.helper cache
+```
+ 
 ### Ansible
 
 [Ansible](https://www.ansible.com/) is used to automate the installation and configuration of the host system. Install via [Pip](https://pypi.org/pip), using (or other method depending on host OS and package manager):
 
 ```bash
-sudo apt install python-pip
+sudo apt install python3-pip
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 2
+sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
 sudo pip install ansible --upgrade
 ```
 
@@ -38,7 +49,7 @@ The following packages are installed and configured:
 * [Zsh](https://www.zsh.org/) with the [oh-my-zsh](https://ohmyz.sh/) libraries is installed using the [gantsign.antigen](https://github.com/gantsign/ansible_role_antigen.git) role. Configuration for the installation, including which antigen bundles are installed, is managed in the file [antigen.yml](antigen.yml).
 * [Visual Studio Code](https://code.visualstudio.com/) is currently my prefered IDE and is installed using the [gantsign.visual-studio-code](https://github.com/gantsign/ansible-role-visual-studio-code.git) role. Configuration for the installation, including which extensions are installed, is managed in the file [vscode.yml](vscode.yml).
 * [VirtualBox](https://www.virtualbox.org/)
-* [Google Chrome](https://www.google.com/chrome/)
+* [Chromium](https://www.chromium.org/)
 * [Docker](https://www.docker.com)
 
 ## Installing
@@ -58,7 +69,7 @@ To run the installation of only a single package, enter the following in place o
 | Package            | Option     |
 | -------            | ---------- |
 | Docker             | docker     |
-| Google Chrome      | chrome     |
+| Chromium           | chromium   |
 | VirtualBox         | virtualbox |
 | Visual Studio Code | vscode     |
 | Zsh                | antigen    |

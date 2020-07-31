@@ -17,7 +17,7 @@
           - name: github
           - name: gitignore
           - name: extract
-          - name: web-search 
+          - name: web-search
           - name: docker
           - name: vagrant
           - name: pip
@@ -28,8 +28,18 @@
           - name: zsh-syntax-highlighting # `name` is required (any valid file name will do so long as it's unique for the bundles)
             url: zsh-users/zsh-syntax-highlighting
 
+  pre_tasks:
+
+    - name: Update apt-get repo and cache
+      become: yes
+      apt:
+        update_cache: yes
+        force_apt_get: yes
+        cache_valid_time: 3600
+      when: ansible_pkg_mgr == 'apt'
+
   tasks:
-  
+
     - name: Install Powerline-fonts
       become: yes
       apt:
@@ -40,4 +50,3 @@
     - name: Install Antigen
       import_role:
         name: gantsign.antigen
-              

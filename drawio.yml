@@ -1,0 +1,57 @@
+---
+
+- hosts: all
+
+  vars:
+
+    drawio_package_arch: amd64
+    drawio_package_version: "11.2.4"
+    drawio_package_deb: https://github.com/jgraph/drawio-desktop/releases/download/v{{ drawio_package_version }}/draw.io-{{ drawio_package_arch }}-{{ drawio_package_version }}.deb
+    drawio_package_rpm: https://github.com/jgraph/drawio-desktop/releases/download/v{{ drawio_package_version }}/draw.io-{{ drawio_package_arch }}-{{ drawio_package_version }}.rpm
+    drawio_package_name: drawio
+
+  pre_tasks:
+
+    - name: Update apt-get repo and cache
+      become: yes
+      apt:
+        update_cache: yes
+        force_apt_get: yes
+        cache_valid_time: 3600
+      when: ansible_pkg_mgr == 'apt'
+
+   tasks:
+
+    - name: "Check if {{ drawio_package_name }} is installed"
+      package_facts:
+        manager: auto
+
+    - debug:
+        var: ansible_facts.packages
+
+    - name: "NGINX test result"
+      debug:
+        msg: "NGINX found"
+      when: drawio_package_name in ansible_facts.packages
+
+    - name: Install draw.io from deb package
+      become: yes
+      apt:
+        deb: "{{ drawio_package_deb }}"
+      when: ansible_pkg_mgr == 'apt'
+
+    - name: Install draw.io from rpm package
+      become: yes
+      yum:
+        name: "{{ drawio_package_rpm }}"
+        state: present
+      when: ansible_pkg_mgr == 'yum'
+
+    # file needs to be have the correxct permissions set
+    # - name: Set correct permissions
+    #   become: yes
+    #   file:
+    #     path: /usr/bin/drawio
+    #     owner: root
+    #     group: root
+    #     mode: '4777'

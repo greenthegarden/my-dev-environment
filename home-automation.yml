@@ -1,0 +1,33 @@
+---
+
+- hosts: all
+
+  vars:
+    # override gantsign.visual-studio-code default vars
+    visual_studio_code_version: ''
+    visual_studio_code_build: stable
+    users:
+      - username: "{{ ansible_user_id }}"
+        visual_studio_code_extensions:
+          - keesschollaart.vscode-home-assistant # Home Assistant Config Helper
+          - openhab.openhab # openHAB
+        visual_studio_code_settings: {
+          "editor.fontSize": 12,
+          "editor.tabSize": 2
+        }
+
+  pre_tasks:
+
+    - name: Update apt-get repo and cache
+      become: yes
+      apt:
+        update_cache: yes
+        force_apt_get: yes
+        cache_valid_time: 3600
+      when: ansible_pkg_mgr == 'apt'
+
+  tasks:
+
+    - name: Install Visual Studio Code
+      import_role:
+        name: gantsign.visual-studio-code

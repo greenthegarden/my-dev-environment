@@ -1,0 +1,22 @@
+---
+
+- hosts: all
+
+  vars:
+    # override gantsign.visual-studio-code default vars
+    visual_studio_code_version: ''
+    visual_studio_code_build: stable
+    users:
+      - username: "{{ ansible_user_id }}"
+        visual_studio_code_extensions:
+          - platformio.platformio-ide # PlatformIO IDE          
+        visual_studio_code_settings: {
+          "editor.fontSize": 12,
+          "editor.tabSize": 2
+        }
+
+  tasks:
+  
+    - name: Install Visual Studio Code
+      import_role:
+        name: gantsign.visual-studio-code

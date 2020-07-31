@@ -1,0 +1,66 @@
+---
+
+# Run role to install and configure Docker on hosts specified as docker_instances
+- hosts: all
+
+  vars:
+    # architecture map idea taken from https://github.com/brianshumate/ansible-consul/blob/master/defaults/main.yml
+    docker_apt_arch_map:
+      # this first entry seems redundant
+      # (but it's required for reasons)
+      amd64: amd64
+      x86_64: amd64
+      armv6l: armhf
+      armv7l: armhf
+      aarch64: arm64
+      64-bit: amd64
+    docker_apt_arch: "{{ docker_apt_arch_map[ansible_architecture] }}"
+    docker_install_compose: yes
+    docker_users: [
+      "{{ ansible_user_id }}"
+    ]
+
+  pre_tasks:
+
+    - name: Update host packages
+      import_role:
+        name: greenthegarden.configure-host
+        tasks_from: run-package-update
+      tags:
+        - base
+        - update
+
+    # - name: Install dependencies
+    #   import_role:
+    #     name: greenthegarden.configure-host
+    #     tasks_from: install-dependencies
+    #   tags:
+    #     - base
+    #     - dependencies
+
+    # - name: Configure Docker
+    #   import_role:
+    #     name: configure-docker
+    #   tags:
+    #     - docker
+    #     - configuration
+
+  tasks:
+
+    - name: Install Docker
+      become: yes
+      import_role:
+        name: geerlingguy.docker
+      when: ansible_architecture is not match("arm")
+      tags:
+        - installation
+        - docker
+
+    # - name: Install Docker for arm
+    #   become: yes
+    #   import_role:
+    #     name: geerlingguy.docker_arm
+    #   when: ansible_architecture is match("arm")
+    #   tags:
+    #     - installation
+    #     - docker

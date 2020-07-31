@@ -1,0 +1,36 @@
+---
+
+- hosts: all
+
+  vars:
+
+    packages: [
+      { 'name': 'chromium', 'state': 'latest' },
+      { 'name': 'chromium-l10n', 'state': 'latest' },
+    ]
+
+  pre_tasks:
+
+    - name: Update apt-get repo and cache
+      become: yes
+      apt:
+        update_cache: yes
+        force_apt_get: yes
+        cache_valid_time: 3600
+      when: ansible_pkg_mgr == 'apt'
+
+  tasks:
+
+    - name: Install Chromium
+      import_role:
+        name: greenthegarden.configure-host
+        tasks_from: install-dependencies.yml
+
+    # file needs to be have the correxct permissions set
+    - name: Set correct permissions
+      become: yes
+      file:
+        path: /usr/bin/drawio
+        owner: root
+        group: root
+        mode: '4777'
