@@ -1,0 +1,35 @@
+---
+
+# Sources:
+# https://medium.com/georgian-impact-blog/python-tooling-makes-a-project-tick-181d567eea44
+# https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
+# https://medium.com/@vanflymen/blazing-fast-ci-with-github-actions-poetry-black-and-pytest-9e74299dd4a5
+
+- name: Install pyenv
+
+  hosts: all
+
+  tasks:
+
+    - name: Install pyenv
+      import_role:
+        name: markosamuli.pyenv
+
+- name: Install Poetry
+
+  hosts: all
+
+  vars:
+
+    pyenv_virtualenvwrapper: false
+
+  tasks:
+
+    - name: Install poetry
+      command: pyenv shell system
+
+    - name: Install poetry
+      command: curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+
+    - name: Reset pyenv
+      command: pyenv shell --unset
