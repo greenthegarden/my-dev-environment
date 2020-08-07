@@ -10,14 +10,18 @@ python3 -m pipx ensurepath
 # now use pipx to install the rest
 pipx install ansible # IT automation
 pipx install molecule # Testing
+pipx install docker # Docker support
 pipx install pre-commit
-pipx install black  # uncompromising Python code formatter
-pipx install flake8  # tool for style guide enforcement
-pipx install gdbgui  # browser-based gdb debugger
-pipx install poetry  # python dependency/environment/packaging management
-pipx install pylint  # source code analyzer
-pipx install pyxtermjs  # fully functional terminal in the browser
-pipx install cookiecutter  # creates projects from project templates
+pipx install yamllint # YAML lint tool
+pipx install ansible-lint # Ansible lint tool
+
+# pipx install black  # uncompromising Python code formatter
+# pipx install flake8  # tool for style guide enforcement
+# pipx install gdbgui  # browser-based gdb debugger
+# pipx install poetry  # python dependency/environment/packaging management
+# pipx install pylint  # source code analyzer
+# pipx install pyxtermjs  # fully functional terminal in the browser
+# pipx install cookiecutter  # creates projects from project templates
 
 # install git hook scripts
 pre-commit install
