@@ -1,6 +1,8 @@
 ---
 
-- hosts: all
+- name: Install and configure zsh
+
+  hosts: all
 
   vars:
 
@@ -24,6 +26,7 @@
           - name: python
           - name: ssh-agent
           - name: command-not-found
+          - name: zsh-autosuggestions
           # Syntax highlighting bundle.
           - name: zsh-syntax-highlighting # `name` is required (any valid file name will do so long as it's unique for the bundles)
             url: zsh-users/zsh-syntax-highlighting
