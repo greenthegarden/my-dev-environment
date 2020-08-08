@@ -3,6 +3,7 @@
 - hosts: all
 
   vars:
+
     # override gantsign.visual-studio-code default vars
     visual_studio_code_version: ''
     visual_studio_code_build: stable

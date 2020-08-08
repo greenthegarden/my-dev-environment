@@ -1,6 +1,8 @@
 ---
 
-- hosts: all
+- name: Install Draw.io
+
+  hosts: all
 
   vars:
 
@@ -20,7 +22,7 @@
         cache_valid_time: 3600
       when: ansible_pkg_mgr == 'apt'
 
-   tasks:
+  tasks:
 
     - name: "Check if {{ drawio_package_name }} is installed"
       package_facts:

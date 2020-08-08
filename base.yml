@@ -6,16 +6,16 @@
 
   vars:
 
-    ansible_python_interpreter: /usr/bin/python3
+    ansible_python_interpreter: python3
 
-    pip_package: "\
-      {# pip package is python3-pip on *nix and python3 on Darwin #}\
-      {% if (ansible_os_family | lower ) != 'darwin' %}\
-        python3-pip\
-      {% else %}\
-        python3\
-      {% endif %}"
-    pip_executable: /usr/bin/pip3
+    # pip_package: "\
+    #   {# pip package is python3-pip on *nix and python3 on Darwin #}\
+    #   {% if (ansible_os_family | lower ) != 'darwin' %}\
+    #     python3-pip\
+    #   {% else %}\
+    #     python3\
+    #   {% endif %}"
+    # pip_executable: pip
 
     python_modules: [
       { name: 'python3-apt' },

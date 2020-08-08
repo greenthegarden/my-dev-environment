@@ -1,12 +1,32 @@
 ---
+
 dependency:
   name: galaxy
 driver:
   name: docker
+# lint:
+#   name: yamllint
 platforms:
   - name: instance
-    image: docker.io/pycontribs/centos:7
+    # image: geerlingguy/docker-ubi8-ansible:latest
+    image: geerlingguy/docker-debian10-ansible:latest
+    privileged: true
     pre_build_image: true
+    command: ""
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    # command: /sbin/init
+    # capabilities:
+    #   - SYS_ADMIN
+    # exposed_ports:
+    #   - 80/udp
+    #   - 80/tcp
+    # published_ports:
+    #   - 0.0.0.0:8888:80/udp
+    #   - 0.0.0.0:8888:80/tcp
+    # groups:
+    #   - debian
 provisioner:
   name: ansible
 verifier:
