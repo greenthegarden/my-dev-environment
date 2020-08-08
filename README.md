@@ -29,7 +29,7 @@ git config --global user.name "Philip Cutler"
 git config --global user.email "greenthegarden@gmail.com"
 git config credential.helper cache
 ```
- 
+
 ### Ansible
 
 [Ansible](https://www.ansible.com/) is used to automate the installation and configuration of the host system. Install via [Pip](https://pypi.org/pip), using (or other method depending on host OS and package manager):

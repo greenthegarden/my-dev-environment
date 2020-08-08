@@ -2,8 +2,10 @@
 gantsign.*
 geerlingguy.*
 greenthegarden.*
+markosamuli.*
 oefenweb.*
 
-# ensure only .vscode/setting.json file is kept
+# ensure only certain files in .vscode directory are kept
 .vscode/*
 !.vscode/settings.json
+!.vscode/tasks.json

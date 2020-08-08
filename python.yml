@@ -5,15 +5,38 @@
 # https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
 # https://medium.com/@vanflymen/blazing-fast-ci-with-github-actions-poetry-black-and-pytest-9e74299dd4a5
 
+- name: Dependencies
+
+  hosts: all
+
+  vars:
+
+    python_modules: [
+      { name: 'python3-apt' },
+    ]
+
+  tasks:
+
+    - name: Install Dependencies
+      import_role:
+        name: greenthegarden.configure-host
+
 - name: Install pyenv
 
   hosts: all
+
+  vars:
+
+    pyenv_global: "python3 system"
 
   tasks:
 
     - name: Install pyenv
       import_role:
         name: markosamuli.pyenv
+
+    # - name: Restart connection
+    #   notify: reload ssh
 
 - name: Install Poetry
 
@@ -24,6 +47,9 @@
     pyenv_virtualenvwrapper: false
 
   tasks:
+
+    # - name: Check for pyenv
+    #   assert:
 
     - name: Install poetry
       command: pyenv shell system
