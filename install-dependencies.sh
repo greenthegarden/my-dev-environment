@@ -10,7 +10,6 @@ python3 -m pipx ensurepath
 # now use pipx to install the rest
 pipx install ansible # IT automation
 pipx install molecule # Testing
-pipx install docker # Docker support
 pipx install pre-commit
 pipx install yamllint # YAML lint tool
 pipx install ansible-lint # Ansible lint tool
@@ -25,3 +24,14 @@ pipx install ansible-lint # Ansible lint tool
 
 # install git hook scripts
 pre-commit install
+
+extension="yml"
+requirements="requirements"
+requirements_file="${requirements}.${extension}"
+if [ -f "${requirements_file}" ] ;
+then
+  echo "Getting dependent roles defined in ${requirements_file} ..."
+  ansible-galaxy install -r ${requirements_file} ${galaxy_options}
+else
+  echo "Why!"
+fi

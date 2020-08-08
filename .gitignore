@@ -7,3 +7,4 @@ oefenweb.*
 # ensure only .vscode/setting.json file is kept
 .vscode/*
 !.vscode/settings.json
+!.vscode/extensions.json
