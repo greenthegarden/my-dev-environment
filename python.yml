@@ -11,7 +11,7 @@
 
   vars:
 
-    python_modules: [
+    packages: [
       { name: 'python3-apt' },
     ]
 

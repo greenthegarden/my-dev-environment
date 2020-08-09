@@ -10,9 +10,18 @@
       { key: 'credential.helper', scope: 'global', value: 'cache' },
     ]
 
+    packages: [
+      { name: 'git' },
+    ]
+
   tasks:
 
-    - name: Configure git
+    - name: Install Git
+      import_role:
+        name: greenthegarden.configure-host
+        tasks_from: install-packages.yml
+
+    - name: Configure Git
       import_role:
         name: greenthegarden.configure-host
         tasks_from: configure-git.yml
