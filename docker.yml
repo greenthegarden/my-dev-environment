@@ -1,5 +1,4 @@
 ---
-
 # Run role to install and configure Docker on hosts specified as docker_instances
 - hosts: all
 
@@ -16,15 +15,12 @@
       64-bit: amd64
     docker_apt_arch: "{{ docker_apt_arch_map[ansible_architecture] }}"
     docker_install_compose: yes
-    docker_users: [
-      "{{ ansible_user_id }}"
-    ]
+    docker_users: ["{{ ansible_user_id }}"]
 
   pre_tasks:
-
     - name: Update host packages
       import_role:
-        name: greenthegarden.configure-host
+        name: greenthegarden.configure_host
         tasks_from: run-package-update
       tags:
         - base
@@ -32,12 +28,11 @@
 
     # - name: Install dependencies
     #   import_role:
-    #     name: greenthegarden.configure-host
+    #     name: greenthegarden.configure_host
     #     tasks_from: install-dependencies
     #   tags:
     #     - base
     #     - dependencies
-
     # - name: Configure Docker
     #   import_role:
     #     name: configure-docker
@@ -46,7 +41,6 @@
     #     - configuration
 
   tasks:
-
     - name: Install Docker
       become: yes
       import_role:
@@ -55,7 +49,6 @@
       tags:
         - installation
         - docker
-
     # - name: Install Docker for arm
     #   become: yes
     #   import_role:

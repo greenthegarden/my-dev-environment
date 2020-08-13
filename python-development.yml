@@ -1,5 +1,4 @@
 ---
-
 # Sources:
 # https://medium.com/georgian-impact-blog/python-tooling-makes-a-project-tick-181d567eea44
 # https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
@@ -10,27 +9,39 @@
   hosts: all
 
   vars:
-
-    packages: [
-      { name: 'python3-apt' },
-    ]
+    packages: [{ name: "python3-apt" }]
 
   tasks:
-
     - name: Install Dependencies
       import_role:
-        name: greenthegarden.configure-host
+        name: greenthegarden.configure_host
 
 - name: Install pyenv
 
   hosts: all
 
   vars:
+    # Update .bashrc and .zshrc shell scripts
+    pyenv_init_shell: true
 
-    pyenv_global: "python3 system"
+    # Latest Python versions
+    pyenv_python38_version: "3.8.1"
+
+    # Python versions to install
+    pyenv_python_versions:
+      - "{{ pyenv_python38_version }}"
+
+    # Set global pyenv version
+    pyenv_global: "{{ pyenv_python38_version }} system"
+
+    # Optionally, install virtualenvwrapper plugin for pyenv
+    pyenv_virtualenvwrapper: false
+    pyenv_virtualenvwrapper_home: "{{ ansible_env.HOME }}/.virtualenvs"
+
+    # Detect existing install
+    pyenv_detect_existing_install: true
 
   tasks:
-
     - name: Install pyenv
       import_role:
         name: markosamuli.pyenv
@@ -43,11 +54,9 @@
   hosts: all
 
   vars:
-
     pyenv_virtualenvwrapper: false
 
   tasks:
-
     # - name: Check for pyenv
     #   assert:
 

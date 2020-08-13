@@ -1,11 +1,9 @@
 ---
-
 - name: Configure base services
 
   hosts: all
 
   vars:
-
     ansible_python_interpreter: python3
 
     # pip_package: "\
@@ -17,13 +15,9 @@
     #   {% endif %}"
     # pip_executable: pip
 
-    packages: [
-      { name: 'python3-apt' },
-      { name: 'python3-pip' },
-    ]
+    packages: [{ name: "python3-apt" }, { name: "python3-pip" }]
 
   tasks:
-
     - name: Install Dependencies
       import_role:
-        name: greenthegarden.configure-host
+        name: greenthegarden.configure_host

@@ -1,7 +1,5 @@
 ---
-
 roles:
-
   - name: gantsign.antigen
     scm: git
     src: git+https://github.com/gantsign/ansible_role_antigen.git
@@ -22,9 +20,9 @@ roles:
     src: git+https://github.com/geerlingguy/ansible-role-pip.git
     version: origin/master
 
-  - name: greenthegarden.configure-host
+  - name: greenthegarden.configure_host
     scm: git
-    src: git+https://github.com/greenthegarden/ansible-role-configure-host.git
+    src: git+https://github.com/greenthegarden/ansible-role-configure_host.git
     version: origin/master
 
   - name: oefenweb.virtualbox
@@ -36,5 +34,4 @@ roles:
     scm: git
     src: git+https://github.com/markosamuli/ansible-pyenv.git
     version: origin/master
-
 # collections:

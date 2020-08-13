@@ -1,11 +1,9 @@
 ---
-
 - name: Install Draw.io
 
   hosts: all
 
   vars:
-
     drawio_package_arch: amd64
     drawio_package_version: "11.2.4"
     drawio_package_deb: https://github.com/jgraph/drawio-desktop/releases/download/v{{ drawio_package_version }}/draw.io-{{ drawio_package_arch }}-{{ drawio_package_version }}.deb
@@ -13,7 +11,6 @@
     drawio_package_name: drawio
 
   pre_tasks:
-
     - name: Update apt-get repo and cache
       become: yes
       apt:
@@ -23,7 +20,6 @@
       when: ansible_pkg_mgr == 'apt'
 
   tasks:
-
     - name: "Check if {{ drawio_package_name }} is installed"
       package_facts:
         manager: auto
@@ -48,7 +44,6 @@
         name: "{{ drawio_package_rpm }}"
         state: present
       when: ansible_pkg_mgr == 'yum'
-
     # file needs to be have the correxct permissions set
     # - name: Set correct permissions
     #   become: yes

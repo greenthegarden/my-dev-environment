@@ -1,11 +1,9 @@
 ---
-
 - name: Install and configure zsh
 
   hosts: all
 
   vars:
-
     users:
       - username: "{{ ansible_user_id }}"
         antigen_libraries:
@@ -32,7 +30,6 @@
             url: zsh-users/zsh-syntax-highlighting
 
   pre_tasks:
-
     - name: Update apt-get repo and cache
       become: yes
       apt:
@@ -42,7 +39,6 @@
       when: ansible_pkg_mgr == 'apt'
 
   tasks:
-
     - name: Install Powerline-fonts
       become: yes
       apt:

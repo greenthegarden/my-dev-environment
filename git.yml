@@ -1,27 +1,27 @@
 ---
-
 - hosts: all
 
   vars:
+    git_config:
+      [
+        { key: "user.name", scope: "global", value: "Philip Cutler" },
+        {
+          key: "user.email",
+          scope: "global",
+          value: "greenthegarden@gmail.com",
+        },
+        { key: "credential.helper", scope: "global", value: "cache" },
+      ]
 
-    git_config: [
-      { key: 'user.name', scope: 'global', value: 'Philip Cutler' },
-      { key: 'user.email', scope: 'global', value: 'greenthegarden@gmail.com' },
-      { key: 'credential.helper', scope: 'global', value: 'cache' },
-    ]
-
-    packages: [
-      { name: 'git' },
-    ]
+    packages: [{ name: "git" }]
 
   tasks:
-
     - name: Install Git
       import_role:
-        name: greenthegarden.configure-host
+        name: greenthegarden.configure_host
         tasks_from: install-packages.yml
 
     - name: Configure Git
       import_role:
-        name: greenthegarden.configure-host
+        name: greenthegarden.configure_host
         tasks_from: configure-git.yml

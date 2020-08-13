@@ -1,0 +1,8 @@
+---
+- src: gantsign.antigen
+- src: gantsign.visual-studio-code
+- src: geerlingguy.docker
+- src: geerlingguy.pip
+- src: greenthegarden.configure_host
+- src: markosamuli.pyenv
+- src: oefenweb.virtualbox

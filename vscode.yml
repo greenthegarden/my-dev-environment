@@ -1,10 +1,9 @@
 ---
-
 - hosts: all
 
   vars:
     # override gantsign.visual-studio-code default vars
-    visual_studio_code_version: ''
+    visual_studio_code_version: ""
     visual_studio_code_build: stable
     users:
       - username: "{{ ansible_user_id }}"
@@ -60,16 +59,16 @@
           - redhat.vscode-yaml # YAML
           # - ricardo-emerson.base-development-extensions-pack
 
-        visual_studio_code_settings: {
-          "editor.fontSize": 12,
-          "editor.tabSize": 2,
-          "editor.insertSpaces": true,
-          "editor.detectIndentation": false,
-          "cSpell.language": "en-GB",
-        }
+        visual_studio_code_settings:
+          {
+            "editor.fontSize": 12,
+            "editor.tabSize": 2,
+            "editor.insertSpaces": true,
+            "editor.detectIndentation": false,
+            "cSpell.language": "en-GB",
+          }
 
   tasks:
-
     - name: Install Visual Studio Code
       import_role:
         name: gantsign.visual-studio-code
