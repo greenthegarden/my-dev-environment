@@ -22,7 +22,7 @@ roles:
 
   - name: greenthegarden.configure_host
     scm: git
-    src: git+https://github.com/greenthegarden/ansible-role-configure_host.git
+    src: git+https://github.com/greenthegarden/ansible-role-configure-host.git
     version: origin/master
 
   - name: oefenweb.virtualbox

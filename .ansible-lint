@@ -1,5 +1,6 @@
 exclude_paths:
   - ./vscode/
+  - ./roles/
 parseable: true
 quiet: true
 skip_list:

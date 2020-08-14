@@ -1,7 +1,7 @@
 ---
-# - import_playbook: base.yml
-# - import_playbook: git.yml
-# - import_playbook: antigen.yml
+- import_playbook: base.yml
+- import_playbook: git.yml
+- import_playbook: antigen.yml
 - import_playbook: python-development.yml
 # - import_playbook: docker.yml
 # - import_playbook: vscode.yml

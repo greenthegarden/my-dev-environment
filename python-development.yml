@@ -11,6 +11,8 @@
   vars:
     packages: [{ name: "python3-apt" }]
 
+    python_modules: [{ name: "pip" }]
+
   tasks:
     - name: Install Dependencies
       import_role:
@@ -45,26 +47,3 @@
     - name: Install pyenv
       import_role:
         name: markosamuli.pyenv
-
-    # - name: Restart connection
-    #   notify: reload ssh
-
-- name: Install Poetry
-
-  hosts: all
-
-  vars:
-    pyenv_virtualenvwrapper: false
-
-  tasks:
-    # - name: Check for pyenv
-    #   assert:
-
-    - name: Install poetry
-      command: pyenv shell system
-
-    - name: Install poetry
-      command: curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
-
-    - name: Reset pyenv
-      command: pyenv shell --unset
