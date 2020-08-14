@@ -4,10 +4,10 @@ An [Ansible](http://www.ansible.com) project to configure a host with the tools 
 
 Ansible provides a very powerful and fliexible way of automating the configuration of systems and is currently my prefered way of managing configuration for the following reasons:
 
-* Can be used to configure both local and remote systems.
-* Does not require the installation of any software on remote systems. Uses only ssh and therefore does require ssh access generally via ssh keys.
-* Allows configuration to be undertaken on multiple systems in parallel.
-* A disadvantage is that is does not play well on Windows based systems.
+- Can be used to configure both local and remote systems.
+- Does not require the installation of any software on remote systems. Uses only ssh and therefore does require ssh access generally via ssh keys.
+- Allows configuration to be undertaken on multiple systems in parallel.
+- A disadvantage is that is does not play well on Windows based systems.
 
 ## Dependencies
 
@@ -46,11 +46,11 @@ sudo pip install ansible --upgrade
 
 The following packages are installed and configured:
 
-* [Zsh](https://www.zsh.org/) with the [oh-my-zsh](https://ohmyz.sh/) libraries is installed using the [gantsign.antigen](https://github.com/gantsign/ansible_role_antigen.git) role. Configuration for the installation, including which antigen bundles are installed, is managed in the file [antigen.yml](antigen.yml).
-* [Visual Studio Code](https://code.visualstudio.com/) is currently my prefered IDE and is installed using the [gantsign.visual-studio-code](https://github.com/gantsign/ansible-role-visual-studio-code.git) role. Configuration for the installation, including which extensions are installed, is managed in the file [vscode.yml](vscode.yml).
-* [VirtualBox](https://www.virtualbox.org/)
-* [Chromium](https://www.chromium.org/)
-* [Docker](https://www.docker.com)
+- [Zsh](https://www.zsh.org/) with the [oh-my-zsh](https://ohmyz.sh/) libraries is installed using the [gantsign.antigen](https://github.com/gantsign/ansible_role_antigen.git) role. Configuration for the installation, including which antigen bundles are installed, is managed in the file [antigen.yml](antigen.yml).
+- [Visual Studio Code](https://code.visualstudio.com/) is currently my prefered IDE and is installed using the [gantsign.visual-studio-code](https://github.com/gantsign/ansible-role-visual-studio-code.git) role. Configuration for the installation, including which extensions are installed, is managed in the file [vscode.yml](vscode.yml).
+- [VirtualBox](https://www.virtualbox.org/)
+- [Chromium](https://www.chromium.org/)
+- [Docker](https://www.docker.com)
 
 ## Installing
 
@@ -67,7 +67,7 @@ and select the default command line arguments.
 To run the installation of only a single package, enter the following in place of the `site` command line option when running `./run_ansible_play.sh`:
 
 | Package            | Option     |
-| -------            | ---------- |
+| ------------------ | ---------- |
 | Docker             | docker     |
 | Chromium           | chromium   |
 | VirtualBox         | virtualbox |

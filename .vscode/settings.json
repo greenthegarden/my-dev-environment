@@ -16,15 +16,11 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/*.db*": true,
-    "**/*.log": true,
+    "**/*.log": true
   },
   // Brack Pair Colorizer Configuration
   // https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2
-  "bracket-pair-colorizer-2.colors": [
-    "Gold",
-    "Orchid",
-    "LightSkyBlue"
-  ],
+  "bracket-pair-colorizer-2.colors": ["Gold", "Orchid", "LightSkyBlue"],
   "bracket-pair-colorizer-2.activeScopeCSS": [
     "borderStyle : solid",
     "borderWidth : 1px",
