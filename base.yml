@@ -18,6 +18,19 @@
     packages: [{ name: "python3-apt" }, { name: "python3-pip" }]
 
   tasks:
+    - name: Install and configure security software
+      import_role:
+        name: geerlingguy.repo-epel
+      when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+    - name: Install and configure security software
+      import_role:
+        name: geerlingguy.security
+
+    - name: Conigue iptable firewall
+      import_role:
+        name: geerlingguy.firewall
+
     - name: Install Dependencies
       import_role:
         name: greenthegarden.configure_host
