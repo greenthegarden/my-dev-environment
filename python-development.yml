@@ -4,6 +4,8 @@
 # https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
 # https://medium.com/@vanflymen/blazing-fast-ci-with-github-actions-poetry-black-and-pytest-9e74299dd4a5
 
+# https://medium.com/python-in-plain-english/unit-testing-in-python-tox-and-nox-833e4bbce729
+
 - name: Dependencies
 
   hosts: all

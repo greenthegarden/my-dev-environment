@@ -3,6 +3,8 @@
 
   hosts: all
 
+  become: yes
+
   vars:
     ansible_python_interpreter: python3
 
@@ -15,7 +17,15 @@
     #   {% endif %}"
     # pip_executable: pip
 
-    packages: [{ name: "python3-apt" }, { name: "python3-pip" }]
+    security_fail2ban_enabled: false
+
+    packages: [{ name: "python3-apt" }]
+
+  pre_tasks:
+    - name: Install dependencies
+      import_role:
+        name: greenthegarden.configure_host
+        tasks_from: install-packages.yml
 
   tasks:
     - name: Install and configure security software

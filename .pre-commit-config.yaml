@@ -48,8 +48,8 @@ repos:
     rev: v0.0.16
     hooks:
       - id: shellcheck
-      - id: shfmt
-        args: ["-l", "-i", "4", "-ci", "-w"]
+      # - id: shfmt
+      #   args: ["-l", "-i", "4", "-ci", "-w"]
 
   - repo: https://github.com/openstack-dev/bashate.git
     rev: "2.0.0"
