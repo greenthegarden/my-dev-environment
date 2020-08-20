@@ -49,3 +49,12 @@
     - name: Install pyenv
       import_role:
         name: markosamuli.pyenv
+
+    - name: Download get-poetry.py
+      get_url:
+        url: https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py
+        dest: /tmp/get-poetry.py
+        mode: "0440"
+
+    - name: Install poetry
+      command: /usr/bin/python3 /tmp/get-poetry.py
