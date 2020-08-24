@@ -3,27 +3,36 @@
 
   hosts: all
 
+  # Zsh plugins and themes at
+  # https://github.com/unixorn/awesome-zsh-plugins
+  # https://github.com/zsh-users/antigen
+  # https://ohmyz.sh/
+
   vars:
     users:
       - username: "{{ ansible_user_id }}"
         antigen_libraries:
           - name: oh-my-zsh
         antigen_theme:
-          name: agnoster
+          name: denysdovhan/spaceship-prompt
         antigen_bundles:
           # Bundles from the default repo (robbyrussell's oh-my-zsh).
+          # - name: autojump
+          - name: common-aliases
+          - name: command-not-found
+          # - name: docker
+          - name: extract
           - name: git
           - name: git-extras
+          - name: git-flow
           - name: github
           - name: gitignore
-          - name: extract
-          - name: web-search
-          - name: docker
-          - name: vagrant
           - name: pip
           - name: python
           - name: ssh-agent
-          - name: command-not-found
+          - name: vagrant
+          - name: vscode
+          - name: web-search
           - name: zsh-autosuggestions
           # Syntax highlighting bundle.
           - name: zsh-syntax-highlighting # `name` is required (any valid file name will do so long as it's unique for the bundles)
@@ -42,8 +51,11 @@
     - name: Install Powerline-fonts
       become: yes
       apt:
-        name: fonts-powerline
+        name: "{{ item }}"
         state: latest
+      loop:
+        - fonts-powerline
+        - fonts-firacode
       when: ansible_pkg_mgr == 'apt'
 
     - name: Install Antigen

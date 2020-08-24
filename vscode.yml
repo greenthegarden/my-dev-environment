@@ -10,9 +10,6 @@
         visual_studio_code_extensions:
           - vscoss.vscode-ansible # Ansible
           - ms-vscode.atom-keybindings # Atom Keymap
-          - ms-vscode.azurecli # Azure CLI Tools
-          - vsciot-vscode.azure-iot-tools # Azure IoT Tools
-          - ms-vsts.team # Azure Repos
           - alefragnani.bookmarks # Bookmarks
           - coenraads.bracket-pair-colorizer-2 # Bracket pair colorizer 2
           - wmaurer.change-case # Change Case
@@ -57,15 +54,16 @@
           - visualstudioexptteam.vscodeintellicode # Visual Studio IntelliCode
           - vscode-icons-team.vscode-icons # VSCode-icons
           - redhat.vscode-yaml # YAML
-          # - ricardo-emerson.base-development-extensions-pack
 
         visual_studio_code_settings:
           {
-            "editor.fontSize": 12,
-            "editor.tabSize": 2,
-            "editor.insertSpaces": true,
-            "editor.detectIndentation": false,
             "cSpell.language": "en-GB",
+            "editor.detectIndentation": false,
+            "editor.fontFamily": "Fira Code",
+            "editor.fontLigatures": true,
+            "editor.fontSize": 12,
+            "editor.insertSpaces": true,
+            "editor.tabSize": 2,
           }
 
   tasks:
